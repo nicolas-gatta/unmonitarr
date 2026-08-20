@@ -4,10 +4,9 @@ services:
     container_name: unmonitarr
     restart: unless-stopped
     ports:
-      - "5055:5055"
+      - "5056:5055"
     volumes:
-      - ./data:/app/data   # persists settings saved via the /settings web page
+      - /opt/unmonitarr/data:/app/data
     environment:
       - TZ=Europe/Brussels
       - LOG_LEVEL=INFO
-
