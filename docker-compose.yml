@@ -1,0 +1,13 @@
+services:
+  unmonitarr:
+    image: ghcr.io/nicolas-gatta/unmonitarr:latest
+    container_name: unmonitarr
+    restart: unless-stopped
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./data:/app/data   # persists settings saved via the /settings web page
+    environment:
+      - TZ=Europe/Brussels
+      - LOG_LEVEL=INFO
+
